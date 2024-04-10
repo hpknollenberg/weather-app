@@ -1,0 +1,1 @@
+If get-weather button is pressed, then populate city, temp-k, temp-f, temp-c, conditions, and image.
