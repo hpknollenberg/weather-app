@@ -1,3 +1,41 @@
-h1 {
-  color: pink;
+#info-block {
+  border-style: dashed;
+  border-width: 2px;
+  height: 65vh;
+}
+
+.info-blocks {
+  border-style: solid;
+  border-width: 2px;
+  margin: 20px;
+}
+
+.sub-title {
+  font-size: 1rem;
+  border-bottom-style: solid;
+  border-width: 2px;
+  background-color: rgb(225, 191, 106);
+}
+
+.title {
+  font-size: 2rem;
+}
+
+#temp-f {
+  border-left-style: solid;
+  border-right-style: solid;
+  border-width: 2px;
+  text-align: center;
+}
+
+#temp-k {
+  text-align: center;
+}
+
+#temp-c {
+  text-align: center;
+}
+
+#conditions {
+  text-align: center;
 }
