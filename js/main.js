@@ -27,10 +27,12 @@ function axiosWeather (zip) {
             populateTemperature();
             populateConditions();
             populateIcon();
+            document.getElementById("error").innerHTML = "";
         })
     })
     .catch(error => {
-        console.log('error: ', error)
+        depopulateEverything();
+        document.getElementById("error").innerHTML = "Error: Please enter a valid zip code.";
     })
 }
 
@@ -58,5 +60,14 @@ function populateConditions () {
 }
 
 function populateIcon () {
-    document.getElementById("image").setAttribute(`src`, `https://openweathermap.org/img/wn/${icon}@2x.png`);
+    document.getElementById("image").setAttribute(`src`, `https://openweathermap.org/img/wn/${icon}@4x.png`);
+}
+
+function depopulateEverything () {
+    document.getElementById("image").setAttribute(`src`, ``);
+    document.getElementById("conditions").innerHTML = "";
+    document.getElementById("temp-k").innerHTML = "K";
+    document.getElementById("temp-f").innerHTML = "F";
+    document.getElementById("temp-c").innerHTML = "C";
+    document.getElementById("city").innerHTML = "";
 }

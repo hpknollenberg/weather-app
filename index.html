@@ -12,7 +12,7 @@
   </head>
   <body class="container">
     <div id="app" class="row">
-      <div id="left" class="col-6">
+      <div id="left" class="col-sm-6">
         <h1 class="title d-flex justify-content-center">Weather App</h1>
         <div class="d-flex justify-content-center">
           <input type="text" placeholder="Zip Code" id="zip-code">
@@ -26,23 +26,25 @@
           <div id="temperature-block" class="info-blocks">
             <h2 class="sub-title d-flex justify-content-center m-0">Temperature</h2>
             <div class="temps row align-items-center">
-              <p id="temp-k" class="col-4 m-0">a</p>
-              <p id="temp-f" class="col-4 m-0">a</p>
-              <p id="temp-c" class="col-4 m-0">a</p>
+              <p id="temp-k" class="col-4 m-0">K</p>
+              <p id="temp-f" class="col-4 m-0">F</p>
+              <p id="temp-c" class="col-4 m-0">C</p>
             </div>
           </div>
           <div id="conditions-block" class="info-blocks">
             <h2 class="sub-title d-flex justify-content-center">Conditions</h2>
             <p id="conditions"></p>
           </div>
-          <div id="image-block" class="info-blocks">
+          <div id="image-block" class="info-blocks row justify-content-center">
             <h2 class="sub-title d-flex justify-content-center">Other Info</h2>
-            <img id="image" src="" class="">
+            <div class="d-flex justify-content-center"> 
+              <img id="image" src="" class="">
+            </div>
           </div>
         </div>
       </div>
-      <div id="right" class="col-6">
-        Error Message Placeholder
+      <div id="right" class="col-sm-6 d-flex flex-column justify-content-center">
+        <p id="error" class=""></p>
       </div>
     </div>
 
