@@ -40,22 +40,27 @@
   border-right-style: solid;
   border-width: 2px;
   text-align: center;
+  padding: 10px;
 }
 
 #temp-k {
   text-align: center;
+  padding: 10px;
 }
 
 #temp-c {
   text-align: center;
+  padding: 10px;
 }
 
 #conditions {
   text-align: center;
+  margin-top: 10px;
 }
 
 #city {
   text-align: center;
+  margin-top: 10px;
 }
 
 #error {
