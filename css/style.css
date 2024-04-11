@@ -15,7 +15,7 @@
   font-size: 1rem;
   border-bottom-style: solid;
   border-width: 2px;
-  background-color: rgba(255, 187, 50, 0.7);
+  margin: 0;
 }
 
 .title {
@@ -61,4 +61,27 @@
 #error {
   text-align: center;
   padding: 5%;
+}
+
+
+
+.load {
+  background-color: rgba(255, 187, 50, .7);
+}
+
+.hot {
+  background-image: linear-gradient(to right, red, yellow);
+}
+
+.mild {
+  background-image: linear-gradient(to right, lightblue, yellow);
+}
+
+.cold {
+  background-image: linear-gradient(to right, white, lightblue);
+}
+
+.rain {
+  background-image: linear-gradient(to right, grey, white);
+  color: black;
 }
