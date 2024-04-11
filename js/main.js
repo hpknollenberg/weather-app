@@ -10,23 +10,43 @@ let icon;
 let currentColorClass = "load";
 
 
+//On Load Get Position Function
+function loadPosition (lat, lon) {
+    axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=d874a5b2c03d18aa2d6ff411a3d736f6`)
+    .then(responseTwo => { 
+        temp = responseTwo.data.main.temp;
+        condition = responseTwo.data.weather[0].description;
+        icon = responseTwo.data.weather[0].icon;
+        city = responseTwo.data.name;
+        document.getElementById("city").innerHTML = city;
+        populateTemperature();
+        populateConditions();
+        populateIcon();
+        document.getElementById("error").innerHTML = "";
+        document.getElementById('spinner').className = "";
+        console.log(responseTwo);
+    })
+}
+
+navigator.geolocation.getCurrentPosition((position) => {
+    loadPosition(position.coords.latitude, position.coords.longitude);
+});
+
+
+
 //Main Function to Get the Weather
 function axiosWeather (zip) {
     document.getElementById('spinner').className = "spinner-border text-info";
     axios.get(`http://api.openweathermap.org/geo/1.0/zip?zip=${zip},US&appid=d874a5b2c03d18aa2d6ff411a3d736f6`)
     .then(response => { 
-        console.log('data: ', response.data); 
         lat = response.data.lat;
         lon = response.data.lon;
         city = response.data.name;
-        console.log(lat, lon, city);
         axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=d874a5b2c03d18aa2d6ff411a3d736f6`)
         .then(responseTwo => { 
-            console.log('weather: ', responseTwo.data);
             temp = responseTwo.data.main.temp;
             condition = responseTwo.data.weather[0].description;
             icon = responseTwo.data.weather[0].icon;
-            console.log(temp, condition);
             populateCity();
             populateTemperature();
             populateConditions();
@@ -48,6 +68,14 @@ document.getElementById("weatherButton").addEventListener("click", () => {
     let zipInput = document.getElementById("zip-code").value;
     axiosWeather(zipInput);
 })
+
+let input = document.getElementById("zip-code");
+input.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        document.getElementById("weatherButton").click();
+    }
+});
 
 
 //Populate Functions
@@ -113,3 +141,6 @@ function depopulateEverything () {
     document.getElementById("sub-title-4").classList.replace(currentColorClass, "load");
     currentColorClass = "load";
 }
+
+
+
