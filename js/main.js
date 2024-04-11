@@ -37,7 +37,7 @@ navigator.geolocation.getCurrentPosition((position) => {
 //Main Function to Get the Weather
 function axiosWeather (zip) {
     document.getElementById('spinner').className = "spinner-border text-info";
-    axios.get(`http://api.openweathermap.org/geo/1.0/zip?zip=${zip},US&appid=d874a5b2c03d18aa2d6ff411a3d736f6`)
+    axios.get(`https://api.openweathermap.org/geo/1.0/zip?zip=${zip},US&appid=d874a5b2c03d18aa2d6ff411a3d736f6`)
     .then(response => { 
         lat = response.data.lat;
         lon = response.data.lon;
