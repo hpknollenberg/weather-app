@@ -57,7 +57,7 @@ function axiosWeather (zip) {
     })
     .catch(error => {
         depopulateEverything();
-        document.getElementById("error").innerHTML = "Error: Please enter a valid zip code.";
+        document.getElementById("error").innerHTML = "ERROR: PLEASE ENTER A VALID ZIP CODE.";
         document.getElementById('spinner').className = "";
     })
 }
